@@ -20,8 +20,8 @@ function addItemToCart(name, price, quantity) {
 addItemToCart()
 addItemToCart()
 
-//Calculate tax
 
+//Calculate tax
 function calculatesTax() {
     subtotal = 0;
    //formula to calculate gst total x taxRate / 100
@@ -31,6 +31,17 @@ function calculatesTax() {
         const taxAmount = subtotal * taxRate / 100;
         console.log(`The total sales tax amount for the shopping cart: $${taxAmount}`)
 
+        
  //Calculates total price in shopping cart
+function calculatesTotal() {
+    let totalBeforeTax = 0;
+    for (var i in shoppingCart) {
+         totalBeforeTax += shoppingCart[i].price * shoppingCart[i].quantity;  
+ 
+    } 
+        const newTotal = totalBeforeTax + taxAmount;
+     console.log(`The total price in your shopping bag is: $${newTotal}`)
+}
+calculatesTotal();
 }
 calculatesTax();
