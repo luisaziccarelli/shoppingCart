@@ -1,8 +1,5 @@
 shoppingCart = [] 
 taxRate = 12.5
-//prompt("What item would you like to add to the shopping cart?")
-
-// let answer = prompt("What item would you like to add to the shopping cart?")
 
 // Add products to shopping cart of the same type
 function addItemToCart(name, price, quantity) {
@@ -20,5 +17,20 @@ function addItemToCart(name, price, quantity) {
    shoppingCart.push(item);
 }
 
-addItemToCart("Shower gel", 49.99, 2)
-addItemToCart("Deodorant", 99.99, 2)
+addItemToCart()
+addItemToCart()
+
+//Calculate tax
+
+function calculatesTax() {
+    subtotal = 0;
+   //formula to calculate gst total x taxRate / 100
+    for (var i in shoppingCart) {
+       subtotal += Math.round((shoppingCart[i].price * 100) /100) * shoppingCart[i].quantity;
+    } 
+        const taxAmount = subtotal * taxRate / 100;
+        console.log(`The total sales tax amount for the shopping cart: $${taxAmount}`)
+
+ //Calculates total price in shopping cart
+}
+calculatesTax();
